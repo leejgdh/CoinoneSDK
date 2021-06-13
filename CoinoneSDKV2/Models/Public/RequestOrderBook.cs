@@ -1,3 +1,4 @@
+using System;
 using System.Net.Http;
 using CoinoneSDKV2.Models;
 using Helper.Models;
@@ -16,7 +17,7 @@ namespace CoinoneSDKV2.Models
         {
             Currency = currency;
         }
-        
+
         [JsonIgnore]
         public string EndPoint => "/orderbook";
 
@@ -31,6 +32,8 @@ namespace CoinoneSDKV2.Models
         {
             throw new System.NotImplementedException();
         }
+
+        public Type ResponseType => typeof(ResponseOrderBook);
     }
 
 }

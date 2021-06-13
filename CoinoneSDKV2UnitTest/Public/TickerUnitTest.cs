@@ -7,11 +7,11 @@ using Helper.Models;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 
-namespace CoinoneSDKV2UnitTest
-{
+
+namespace CoinoneSDKV2UnitTest{
 
 
-    public class OrderBookUnitTest
+    public class TickerUnitTest
     {
 
         private string _secretKey;
@@ -23,17 +23,16 @@ namespace CoinoneSDKV2UnitTest
         public void Setup()
         {
             _coinoneClient = new CoinoneClient();
-
         }
 
         [Test]
-        public async Task OrderBookTest()
+        public async Task TickerTest()
         {
             try
             {
-                RequestOrderBook requestOrderBook = new RequestOrderBook(ECoinCurrency.BTC);
+                RequestTicker requestOrderBook = new RequestTicker(ECoinCurrency.BTC);
 
-                var res = await _coinoneClient.SendRequestAsync<ResponseOrderBook>(requestOrderBook);
+                var res = await _coinoneClient.SendRequestAsync<ResponseTicker>(requestOrderBook);
 
                 Assert.AreEqual(res.IsSuccess, true, res.Message);
             }
@@ -43,6 +42,4 @@ namespace CoinoneSDKV2UnitTest
             }
         }
     }
-
-
 }

@@ -11,7 +11,7 @@ namespace CoinoneSDKV2UnitTest
 {
 
 
-    public class OrderBookUnitTest
+    public class TickerUTCUnitTest
     {
 
         private string _secretKey;
@@ -27,13 +27,13 @@ namespace CoinoneSDKV2UnitTest
         }
 
         [Test]
-        public async Task OrderBookTest()
+        public async Task TickerUTCTest()
         {
             try
             {
-                RequestOrderBook requestOrderBook = new RequestOrderBook(ECoinCurrency.BTC);
+                RequestTickerUTC requestOrderBook = new RequestTickerUTC(ECoinCurrency.BTC);
 
-                var res = await _coinoneClient.SendRequestAsync<ResponseOrderBook>(requestOrderBook);
+                var res = await _coinoneClient.SendRequestAsync<ResponseTicker>(requestOrderBook);
 
                 Assert.AreEqual(res.IsSuccess, true, res.Message);
             }

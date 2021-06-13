@@ -1,10 +1,10 @@
 using Helper.Models;
 
-namespace CoinoneSDKV2.Models{
+namespace CoinoneSDKV2.Models
+{
 
 
-    public class CoinoneResponseBase<T> : TaskResult<T>
+    public class CoinoneResponseBase<T>: TaskResult<T>
     {
-
     }
 }

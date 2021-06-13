@@ -22,16 +22,7 @@ namespace CoinoneSDKV2UnitTest
         [SetUp]
         public void Setup()
         {
-
-            var config = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.ToString())
-            .AddJsonFile(@"appsettings.json", optional: false, reloadOnChange: true)
-            .Build();
-
-            _secretKey = config.GetSection("Coinone")["SecretKey"];
-            _accessToken = config.GetSection("Coinone")["AccessToken"];
-
-            _coinoneClient = new CoinoneClient(_secretKey);
+            _coinoneClient = new CoinoneClient();
 
         }
 
